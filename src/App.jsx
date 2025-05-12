@@ -4,6 +4,7 @@ import {Routes, Route} from 'react-router-dom'
 import { ProductsPage, HomePage, ContactPage, AboutPage, AuthPage } from './pages'
 import { Footer, Header } from './components'
 const App = () => {
+
   return (
     <>
       <Header />
