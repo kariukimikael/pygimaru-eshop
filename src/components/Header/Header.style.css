@@ -1,0 +1,37 @@
+.navbar {
+  position: sticky;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25em 0.45em;
+  border: 2px solid;
+  margin-bottom: 0.5em;
+}
+.navbar h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: cursive;
+  color: #000;
+}
+.navlinks {
+  display: flex;
+  gap: 1.5em;
+  margin-left: auto;
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+.icons {
+  display: flex;
+  gap: 0.25em;
+}
+.icons button{
+  padding: 0.5em;
+  border-radius: 50%;
+  background: transparent;
+  color: black;
+  font-size: 1.3rem;
+  cursor: pointer;
+}

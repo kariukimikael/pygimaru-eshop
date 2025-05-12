@@ -1,0 +1,21 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5em 5em;
+}
+
+footer h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: cursive;
+  color: #000;
+}
+footer .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  justify-items: center;
+}
