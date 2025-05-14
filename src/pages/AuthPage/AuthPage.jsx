@@ -1,9 +1,11 @@
 import React from 'react'
-import { AuthForm } from '../../components'
+import { Login, Register } from '../../components'
+import './AuthPage.css'
 const AuthPage = () => {
   return (
-    <div>
-      <AuthForm />
+    <div className="form-group sm:max-w-[400px] h-screen">
+      {/* <Login /> */}
+      <Register />
     </div>
   )
 }

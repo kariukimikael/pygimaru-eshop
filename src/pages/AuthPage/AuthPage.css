@@ -1,0 +1,6 @@
+.form-group{
+  padding: 1em .5em;
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+}

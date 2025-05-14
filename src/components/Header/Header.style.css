@@ -1,37 +1,48 @@
-.navbar {
-  position: sticky;
+header{
+  position: fixed;
   width: 100%;
+  top: 0;
+  padding: .25em;
+}
+.navbar{
+  border: 2px solid #000;
+  padding: .7em .35em;
+  position: relative;
+}
+
+.search-bar{
+  border: 2px solid #000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0.25em 0.45em;
-  border: 2px solid;
-  margin-bottom: 0.5em;
+  border-radius: 2em;
+  overflow: hidden;
+  margin: 1.5em auto;
 }
-.navbar h1 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-family: cursive;
-  color: #000;
+.search-bar input{
+  padding: .7em .35em;
+  width: 90%;
+  outline: none;
 }
-.navlinks {
-  display: flex;
-  gap: 1.5em;
-  margin-left: auto;
-  font-size: 1.125rem;
-  font-weight: 500;
-  font-family: monospace;
-  text-transform: uppercase;
+.search-bar button{
+  width: 10%;
+  background: gainsboro;
+  padding: .7em .35em;
 }
-.icons {
-  display: flex;
-  gap: 0.25em;
-}
-.icons button{
-  padding: 0.5em;
-  border-radius: 50%;
-  background: transparent;
-  color: black;
-  font-size: 1.3rem;
-  cursor: pointer;
+@media (max-width: 640px){
+  .nav-links{
+    position: absolute;
+    top: 2.7em;
+    left: 0;
+    background: #000;
+    width: 100%;
+    color: aliceblue;
+    padding: .7em .35em;
+    display: grid;
+    gap: .5em;
+    display: none;
+  }
+  ul.nav-links li{
+    padding: .5em .25em;
+    border: 2px solid whitesmoke;
+  }
 }
