@@ -1,48 +1,70 @@
 header{
   position: fixed;
-  width: 100%;
   top: 0;
-  padding: .25em;
+  left: 0;
+  width: 100%;
+  padding: .8em 1.6em;
+  border: 2px solid black;
 }
-.navbar{
-  border: 2px solid #000;
-  padding: .7em .35em;
+header h1{
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: cursive;
+  color: #000;
+}
+.mobile-menu{
+  position: absolute;
+  width: 100%;
+  background: #000;
+  color: antiquewhite;
+  padding: .75em;
+  top: 100%;
+  left: 0;
+  border: 2px solid rgba(0, 0, 0, 0.749);
+}
+.mobile-menu ul li{
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.nav-icons{
+  font-size: 1.35rem;
+}
+.menu-toggle {
   position: relative;
-}
-
-.search-bar{
-  border: 2px solid #000;
+  margin-left: auto;
+  width: 25px;
+  height: 30px;
+  cursor: pointer;
   display: flex;
+  justify-content: center;
   align-items: center;
-  border-radius: 2em;
-  overflow: hidden;
-  margin: 1.5em auto;
 }
-.search-bar input{
-  padding: .7em .35em;
-  width: 90%;
-  outline: none;
+.menu-toggle::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  border-radius: .5em;
+  transform: translateY(-10px);
+  box-shadow: 0 10px #000;
+  transition: 0.5s;
 }
-.search-bar button{
-  width: 10%;
-  background: gainsboro;
-  padding: .7em .35em;
+.menu-toggle::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: .5em;
+  background: #000;
+  transform: translateY(10px);
+  transition: 0.5s;
 }
-@media (max-width: 640px){
-  .nav-links{
-    position: absolute;
-    top: 2.7em;
-    left: 0;
-    background: #000;
-    width: 100%;
-    color: aliceblue;
-    padding: .7em .35em;
-    display: grid;
-    gap: .5em;
-    display: none;
-  }
-  ul.nav-links li{
-    padding: .5em .25em;
-    border: 2px solid whitesmoke;
-  }
+nav.active .menu-toggle::before {
+  transform: rotate(45deg);
+  box-shadow: 0 0px #000;
+}
+nav.active .menu-toggle::after {
+  transform: rotate(315deg);
 }

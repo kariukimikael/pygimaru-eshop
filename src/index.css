@@ -32,6 +32,7 @@ ol[role='list'] {
 body {
   min-height: 100dvh;
   line-height: 1.5;
+  padding: .5em 1.6em;
   font-family: "Open Sans", sans-serif;
 }
 

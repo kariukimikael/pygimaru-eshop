@@ -2,6 +2,7 @@ import React from 'react'
 import './Register.css'
 import { useForm } from 'react-hook-form'
 const Register = () => {
+  // TODO: Error handling
   const {
     register,
     handleSubmit,

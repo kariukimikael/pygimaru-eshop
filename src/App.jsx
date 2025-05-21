@@ -4,9 +4,9 @@ import {Routes, Route} from 'react-router-dom'
 import { ProductsPage, HomePage, ContactPage, AboutPage, AuthPage } from './pages'
 import { Footer, Header } from './components'
 const App = () => {
-
+// TODO: Error Page
   return (
-    <>
+    <div className='container'>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/auth" element={<AuthPage />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   )
 }
 

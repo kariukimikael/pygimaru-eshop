@@ -2,30 +2,71 @@ import React from 'react'
 import { BsCart, BsHeart, BsSearch } from 'react-icons/bs'
 import { BiUser } from 'react-icons/bi'
 import './Header.style.css'
-import { Link } from 'react-router-dom'
+import ActiveLink from '../ActiveLinks/ActiveLink'
+import { useState, useRef } from 'react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+
+
+gsap.registerPlugin(useGSAP)
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const menuRef = useRef()
+
+  const toggleMenu = () => {
+    const newState = !isOpen
+    setIsOpen(newState)
+
+    // Open Animation
+    if (newState) {
+      gsap.fromTo(
+        menuRef.current,
+        { x: '100%', opacity: 0 },
+        { x: 0, opacity: 1, duration: 0.5, ease: 'power2.inOut' }
+      )
+    } else {
+      // Close Animation
+      gsap.to(menuRef.current, {
+        x: '100%',
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power2.inOut',
+      })
+    }
+  }
+
+  // Set initial state of the menu
+  useGSAP(() => {
+    gsap.set(menuRef.current, { x: '100%', opacity: 0 })
+  }, [])
+
   return (
     <header>
-      <div className="navbar flex justify-between items-center position-relative">
-        <div className="logo">
-          <h1>Pygimaru</h1>
-        </div>
-        <ul className="nav-links sm:flex gap-2 md:position-absolute">
+      {/* Desktop Links */}
+      <nav
+        className={`${
+          isOpen ? 'active' : ''
+        } flex justify-between items-center`}
+      >
+        <h1>Pygimaru</h1>
+        <ul className="hidden sm:flex gap-4">
           <li>
-            <Link to="/">Home</Link>
+            <ActiveLink to="/">Home</ActiveLink>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <ActiveLink to="/products">Shop</ActiveLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <ActiveLink to="/about">About</ActiveLink>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <ActiveLink to="/contact">Contact</ActiveLink>
           </li>
         </ul>
-        <div className="nav-icons flex gap-2">
+
+        {/* Icons */}
+        <div className="nav-icons flex gap-3 items-center">
           <div className="wishlist-icon">
             <BsHeart />
           </div>
@@ -33,17 +74,34 @@ const Header = () => {
             <BsCart />
           </div>
           <div className="user-icon">
-            <Link to="/auth">
+            <ActiveLink to="/auth">
               <BiUser />
-            </Link>
+            </ActiveLink>
           </div>
+
+          {/* Hamburger Button */}
+          <button onClick={toggleMenu} className="sm:hidden">
+            <div className="menu-toggle"></div>
+          </button>
         </div>
-      </div>
-      <div className="search-bar sm:max-w-[400px]">
-        <input type="text" placeholder="Search for products..." />
-        <button>
-          <BsSearch />
-        </button>
+      </nav>
+
+      {/* Mobile Slide Menu */}
+      <div ref={menuRef} className="md:hidden mobile-menu">
+        <ul onClick={toggleMenu}>
+          <li>
+            <ActiveLink to="/">Home</ActiveLink>
+          </li>
+          <li>
+            <ActiveLink to="/products">Shop</ActiveLink>
+          </li>
+          <li>
+            <ActiveLink to="/about">About</ActiveLink>
+          </li>
+          <li>
+            <ActiveLink to="/contact">Contact</ActiveLink>
+          </li>
+        </ul>
       </div>
     </header>
   )

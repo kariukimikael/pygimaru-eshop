@@ -2,19 +2,20 @@ import React from 'react'
 import './Footer.style.css'
 import { Link } from 'react-router-dom'
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
+
 const Footer = () => {
   return (
-    <footer>
-      <div className="container">
-        <div className="shop-info">
+    <footer className="footer">
+      <div className="footer-wrapper">
+        <div className="footer-section shop-info">
           <h2>Pygimaru Eshop</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error harum
-            ratione alias vel beatae architecto totam eveniet enim consectetur
-            magnam maiores excepturi voluptas
+            Welcome to Pygimaru Eshop — your destination for quality and style.
+            Discover unique products and creative fashion every season.
           </p>
         </div>
-        <div className="footer-links">
+
+        <div className="footer-section footer-links">
           <h2>Links</h2>
           <ul>
             <li>
@@ -31,27 +32,44 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="social-links">
+
+        <div className="footer-section social-links">
           <h2>Get in Touch</h2>
-          <ul>
+          <ul className="social-icons">
             <li>
-              <a href="https://www.facebook.com/kariukimikael" target="_blank">
+              <a
+                href="https://www.facebook.com/kariukimikael"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
                 <FaFacebookF />
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/kariukimikael" target="_blank">
+              <a
+                href="https://www.instagram.com/kariukimikael"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
                 <FaInstagram />
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/kariukimikael" target="_blank">
+              <a
+                href="https://twitter.com/kariukimikael"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+              >
                 <FaTwitter />
               </a>
             </li>
           </ul>
           <p>
-            +254-700-000-000 <br /> kariukimikael@gmail.com{' '}
+            +254-700-000-000 <br />
+            kariukimikael@gmail.com
           </p>
         </div>
       </div>

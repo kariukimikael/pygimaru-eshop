@@ -2,6 +2,7 @@ import React from 'react'
 import './Login.css'
 import { useForm } from 'react-hook-form'
 const Login = () => {
+  // TODO: Error handling
   const {
     register,
     handleSubmit,
@@ -13,6 +14,7 @@ const Login = () => {
   return (
     <div className='form-wrapper flex flex-col gap-3'>
       <h2>Welcome Back</h2>
+      // TODO: Implement Google login
       <button type="button">Login With Google</button>
       <div className="separator">
         <div className="line"></div>
