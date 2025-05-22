@@ -1,9 +1,9 @@
 import React from 'react'
-import './Register.css'
+import './Register.styles.css'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
+
 const Register = ({ switchToLogin }) => {
-  // TODO: Error handling
   const {
     register,
     handleSubmit,
@@ -12,8 +12,9 @@ const Register = ({ switchToLogin }) => {
   const onSubmit = (data) => {
     console.log(data)
   }
+
   return (
-    <div className="form-wrapper flex flex-col gap-3">
+    <div className="form-wrapper">
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Name Input */}
         <fieldset>

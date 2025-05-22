@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsCart, BsHeart, BsSearch } from 'react-icons/bs'
 import { BiUser } from 'react-icons/bi'
-import './Header.style.css'
+import './Header.styles.css'
 import ActiveLink from '../ActiveLinks/ActiveLink'
 import { useState, useRef } from 'react'
 import gsap from 'gsap'

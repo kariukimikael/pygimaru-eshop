@@ -1,11 +1,1 @@
-.container{
-  position: relative;
-  max-width: 100%;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-}
 
-.container > :nth-child(2){
-  flex: 1;
-}

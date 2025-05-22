@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Login, Register } from '../../components'
-import './AuthPage.css'
+import './AuthPage.styles.css'
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true)
 
@@ -9,7 +9,7 @@ const AuthPage = () => {
 
   return (
     <div className="form-container">
-      <div className="form-wrap sm:w-[400px]">
+      <div className="form-wrapper">
         <div className="form-header">
           <h1>{isLogin ? 'Login' : 'Welcome Back'}</h1>
         </div>

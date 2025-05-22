@@ -1,0 +1,31 @@
+.form-container{
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: .4em;
+}
+.form-container > .form-wrapper{
+  border: 2px solid black;
+  width: 400px;
+}
+.form-header{
+  border: 2px solid black;
+  padding: .4em;
+  margin-bottom: .25em;
+}
+.form-container h1{
+  font-size: 2.8rem;
+  font-family: monospace;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .form-container h1{
+    font-size: 2.4rem;
+  }
+  .form-container > .form-wrapper{
+    width: 100%;
+  }
+}

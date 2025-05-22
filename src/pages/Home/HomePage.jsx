@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './HomePage.styles.css'
 const HomePage = () => {
   return (
-    <div>
+    <div className='container'>
       <h1 className="text-3xl font-bold underline">Home Page</h1>
       <p className="text-lg">Welcome to the Home Page!</p>
       <p className="text-lg">

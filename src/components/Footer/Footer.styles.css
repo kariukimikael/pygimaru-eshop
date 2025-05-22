@@ -1,0 +1,58 @@
+footer{
+  background: #000;
+  color: aliceblue;
+  padding: 1.2em .8em;
+}
+footer h2{
+  font-size: 1.6rem;
+  font-family: monospace;
+  margin-bottom: .24em;
+}
+footer ul li{
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+footer .shop-info p{
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.footer-wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+  gap: .8em;
+}
+footer ul.social-icons{
+  display: flex;
+  gap: 1.2em;
+  margin-block: .8em;
+}
+footer ul.social-icons li{
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+footer ul li:hover{
+  color: #df2f5d;
+}
+
+footer .social-links p{
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5;
+} 
+@media (max-width: 640px) {
+  .footer-wrapper{
+    justify-items: start;
+  }
+  footer h2{
+    font-size: 1.6rem;
+  }
+  footer ul li{
+    font-size: 1.2rem;
+  }
+  footer .shop-info p{
+    font-size: 1.12rem;
+  }
+}

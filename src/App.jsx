@@ -6,7 +6,7 @@ import { Footer, Header } from './components'
 const App = () => {
 // TODO: Error Page
   return (
-    <div className='container'>
+    <div>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

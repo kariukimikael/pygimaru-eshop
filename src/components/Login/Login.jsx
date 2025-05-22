@@ -1,5 +1,5 @@
 import React from 'react'
-import './Login.css'
+import './Login.styles.css'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
@@ -15,7 +15,7 @@ const Login = ({ switchToRegister }) => {
     console.log(data)
   }
   return (
-    <div className="form-wrapper flex flex-col">
+    <div className="form-wrapper flex flex-col gap-2">
       {/* Google Login Button */}
       <button
         className="bg-blue-700 text-black flex gap-2 justify-center items-center"

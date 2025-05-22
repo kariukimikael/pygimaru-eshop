@@ -1,11 +1,11 @@
 import React from 'react'
-import './Footer.style.css'
+import './Footer.styles.css'
 import { Link } from 'react-router-dom'
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer>
       <div className="footer-wrapper">
         <div className="footer-section shop-info">
           <h2>Pygimaru Eshop</h2>
