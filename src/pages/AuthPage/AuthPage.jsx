@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Login, Register } from '../../components'
 import './AuthPage.css'
 const AuthPage = () => {
-  // TODO: Add a toggle between login and register
-  // TODO: Add a redirect to the home page if the user is already logged in
-  // TODO: Add a redirect to the login page if the user is not logged in
-  // TODO: Connect the login and register forms to the backend
+  const [isLogin, setIsLogin] = useState(true)
+
+  const switchToLogin = () => setIsLogin(true)
+  const switchToRegister = () => setIsLogin(false)
+
   return (
-    <div className="form-group sm:max-w-[400px] h-screen">
-      {/* <Login /> */}
-      <Register />
+    <div className="form-container">
+      <div className="form-wrap sm:w-[400px]">
+        <div className="form-header">
+          <h1>{isLogin ? 'Login' : 'Welcome Back'}</h1>
+        </div>
+        {isLogin ? (
+          <Login switchToRegister={switchToRegister} />
+        ) : (
+          <Register switchToLogin={switchToLogin} />
+        )}
+      </div>
     </div>
   )
 }
