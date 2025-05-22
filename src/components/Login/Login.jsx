@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Login.styles.css'
 import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
-
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 const Login = ({ switchToRegister }) => {
-  // TODO: Error handling
+  const [showPassword, setShowPassword] = useState(false)
   const {
     register,
     handleSubmit,
@@ -36,19 +36,34 @@ const Login = ({ switchToRegister }) => {
         {/* Email Input */}
         <fieldset>
           <input
-            {...register('email', { required: true })}
-            placeholder="Email"
+            {...register('email', {
+              required: 'Email is required',
+              pattern: {
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                message: 'Invalid email address',
+              },
+            })}
+            placeholder="Enter Email"
           />
+          {errors.email && <p className="error">{errors.email.message}</p>}
         </fieldset>
 
         {/* Password Input */}
         <fieldset>
-          <input
-            {...register('password', { required: true, min: 8 })}
-            type="password"
-            placeholder="Password"
-          />
-          <div className="form-links text-left!">
+          <div className="password-field">
+            <input
+              {...register('password', { required: 'Password is required' })}
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Enter Password"
+            />
+            <span onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
+          {errors.password && (
+            <p className="error">{errors.password.message}</p>
+          )}
+          <div className="pass-reset">
             <p>Forgot Password?</p>
           </div>
         </fieldset>

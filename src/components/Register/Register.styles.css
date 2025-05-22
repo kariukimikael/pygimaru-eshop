@@ -35,3 +35,24 @@ button.submit-btn{
   transition: all .3s ease-in-out;
   letter-spacing: .125rem;
 }
+
+form .password-field{
+  display: flex;
+  align-items: center;
+  border-radius: .25em;
+  /* border: 1px solid black; */
+}
+form .password-field input{
+  border-radius: 0;
+}
+form .password-field span{
+  font-size: 1.225rem;
+  padding: .75em;
+  border: 1px solid black;
+  background: rgb(156, 151, 151);
+}
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
